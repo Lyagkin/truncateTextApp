@@ -1,0 +1,108 @@
+@import "libs/bootstrap-reboot.min";
+@import "libs/fonts";
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Avenir Next Cyr", sans-serif;
+}
+
+body {
+    background-color: #6666FF;
+}
+
+.container {
+    position: absolute;
+    width: 95%;
+    max-width: 70em;
+    background-color: #FFFFFF;
+    border-radius: 0.8em;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5em 2em;
+}
+
+.txtareas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+label {
+    color: #02001f;
+    font-weight: 600;
+}
+
+.txtareas div {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.txtareas textarea {
+    resize: none;
+    border: 1px solid #02002f;
+    border-radius: 0.3em;
+    margin: 1em 0 2em 0;
+    padding: 0.8em;
+}
+
+#len {
+    width: 5em;
+    padding: 0.8em 1em;
+    border: 1px solid #02001f;
+    border-radius: 0.5em;
+}
+
+#truncate,#copy {
+    padding: 0.8em 2em;
+    border-radius: 0.5em;
+    border: none;
+    background-color: #6666FF;
+
+}
+
+@media screen and (max-width: 600px) {
+    .txtareas {
+        grid-template-columns: 1fr;
+    }
+}
+
+.modal {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s linear, visibility 0.3s linear;
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 30%;
+        height: 40%;
+        background-color: #fff;
+        padding: 30px 50px;
+        text-align: center;
+        font-size: 24px;
+        color: #000;
+    }
+    &__close {
+        position: absolute;
+        top: 0px;
+        right: 10px;
+        cursor: pointer;
+    }
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
+}
